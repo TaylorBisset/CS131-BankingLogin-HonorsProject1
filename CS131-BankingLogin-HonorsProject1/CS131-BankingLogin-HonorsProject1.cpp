@@ -13,7 +13,7 @@ int main()
     switch (startMenu)
     {
     case 1: 
-        // login();
+        login();
         break;
     case 2: 
         // createAccount();
@@ -156,4 +156,11 @@ void login()
 {
     cout << "\nFill in your login information below\n";
     // Login logic goes here
+}
+
+void createAccount()
+{
+    cout << "\nLet's create a new account for you!\n";
+    // get username using function
+    // get password using function
 }
