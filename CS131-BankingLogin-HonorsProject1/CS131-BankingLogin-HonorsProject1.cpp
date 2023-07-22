@@ -4,6 +4,12 @@
 
 using namespace std;
 
+// Function prototypes
+int displayStartMenu();
+void login();
+void createAccount();
+string getValidUsername();
+
 int main()
 {
     cout << "Welcome to your eBank!\n\n";
@@ -34,7 +40,7 @@ int main()
         cout << "Your password must be at least 8 characters long, \n";
         cout << "and must contain at least:\n";
         cout << "2 letters, 2 numbers,\n2 standard special characters (e.g. !@#$%^&*()),\nand no spaces.\n\n";
-        cout << "Remember to NEVER share your password with anyone.\n\n";
+        cout << "Remember to NEVER share your password with anyone.\n";
 
         string password;
         bool isPasswordValid = false;
@@ -127,7 +133,7 @@ void login()
 void createAccount()
 {
     cout << "\nLet's create a new account for you!\n";
-    // get username using function
+    string username = getValidUsername();
     // get password using function
 }
 
@@ -139,6 +145,34 @@ string getValidUsername()
     cout << endl;
     cout << "Please create a new username.\n";
     cout << "Your username must be at least 6 characters long,\n";
-    cout << "and must only contain letters and numbers.\n\n";
+    cout << "and must only contain letters and numbers.\n";
 
+    while (!isUsernameValid)                        // initiate while loop to check for a valid username input 
+    {
+        cout << "\n\tEnter your username here: ";
+        getline(cin, username);                     // user inputs their desired username 
+
+        if (username.size() > 5)
+        {
+            isUsernameValid = true;                 // set true, until proven otherwise 
+            for (char c : username)                 // range-based for loop 
+            {
+                if (!isalnum(c) || isspace(c))      // checks if each character is NOT alphanumeric or is a space 
+                {
+                    isUsernameValid = false;
+                    cout << "\nInvalid username. Please only use letters and numbers.\n";
+                    break;
+                }
+            }
+        }
+        else if (username.size() < 6)
+        {
+            cout << "\nInvalid username. Please ensure there are at least 6 characters.\n";
+        }
+    }
+
+    if (isUsernameValid == true)
+    {
+        cout << "\n\tValid username.\n\tYour username is: " << username << endl;
+    }
 }
