@@ -28,15 +28,15 @@ int main()
     // Create Account 
     if (startMenu == 2)
     {
+        // Create username
         cout << endl;
-        cout << "Please create a new username\n";
+        cout << "Please create a new username.\n";
         cout << "Your username must be at least 6 characters long, \n";
         cout << "and must only contain letters and numbers.\n\n";
-
+         
         string username;
         bool isUsernameValid = false;
 
-        // Create username 
         while (!isUsernameValid)                        // initiate while loop to check for a valid username input 
         {
             cout << "Enter your usernamne here: ";
@@ -47,7 +47,7 @@ int main()
                 isUsernameValid = true;                 // set true, until proven otherwise 
                 for (char c : username)                 // range-based for loop 
                 {
-                    if (!isalnum(c) || isspace(c))      // checks if each character is NOT alphanumeric or is a space
+                    if (!isalnum(c) || isspace(c))      // checks if each character is NOT alphanumeric or is a space 
                     {
                         isUsernameValid = false;
                         cout << "\nInvalid username. Please only use letters and numbers.\n";
@@ -63,10 +63,17 @@ int main()
 
         if (isUsernameValid == true)
         {
-            cout << "Valid username.\nYour username is: " << username << endl;
+            cout << "\nValid username.\nYour username is: " << username << endl;
         }
-    }
 
+        // Create password 
+        cout << endl;
+        cout << "Please create a password for your new account.\n";
+        cout << "Your password must be at least 8 characters long, \n";
+        cout << "and must contain at least:\n";
+        cout << "2 letters, 2 numbers, 2 special characters, and no spaces.\n\n";
+
+    }
 
     return 0;
 }
