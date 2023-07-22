@@ -23,6 +23,7 @@ int main()
         {
             cout << "\nLet's create a new account for you!\n";
         }
+        cin.ignore();
     }
 
     // Create Account 
@@ -31,7 +32,7 @@ int main()
         // Create username
         cout << endl;
         cout << "Please create a new username.\n";
-        cout << "Your username must be at least 6 characters long, \n";
+        cout << "Your username must be at least 6 characters long,\n";
         cout << "and must only contain letters and numbers.\n\n";
          
         string username;
@@ -39,7 +40,7 @@ int main()
 
         while (!isUsernameValid)                        // initiate while loop to check for a valid username input 
         {
-            cout << "\tEnter your username here: ";
+            cout << "\n\tEnter your username here: ";
             getline(cin, username);                     // user inputs their desired username 
 
             if (username.size() > 5)
@@ -55,7 +56,7 @@ int main()
                     }
                 }
             }
-            else
+            else if (username.size() < 6)
             {
                 cout << "\nInvalid username. Please ensure there are at least 6 characters.\n";
             }
@@ -79,7 +80,7 @@ int main()
 
         while (!isPasswordValid)                        // initiate while loop to check for a valid password input 
         {
-            cout << "\tEnter your password here: ";
+            cout << "\n\tEnter your password here: ";
             getline(cin, password);                     // user inputs their desired password 
             int alphaCount = 0;
             int digitCount = 0;
