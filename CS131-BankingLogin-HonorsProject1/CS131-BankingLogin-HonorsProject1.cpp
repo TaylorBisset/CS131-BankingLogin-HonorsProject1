@@ -150,3 +150,10 @@ int displayStartMenu()
         cin.ignore();
     }
 }
+
+// Login function
+void login()
+{
+    cout << "\nFill in your login information below\n";
+    // Login logic goes here
+}
