@@ -39,7 +39,7 @@ int main()
 
         while (!isUsernameValid)                        // initiate while loop to check for a valid username input 
         {
-            cout << "Enter your usernamne here: ";
+            cout << "Enter your username here: ";
             getline(cin, username);                     // user inputs their desired username 
 
             if (username.size() > 5)
@@ -71,8 +71,47 @@ int main()
         cout << "Please create a password for your new account.\n";
         cout << "Your password must be at least 8 characters long, \n";
         cout << "and must contain at least:\n";
-        cout << "2 letters, 2 numbers, 2 special characters, and no spaces.\n\n";
+        cout << "2 letters, 2 numbers,\n2 standard special characters (e.g. !@#$%^&*()),\nand no spaces.\n\n";
+        cout << "Remember to NEVER share your password with anyone.\n\n";
 
+        string password;
+        bool isPasswordValid = false;
+
+        while (!isPasswordValid)                        // initiate while loop to check for a valid password input 
+        {
+            cout << "Enter your password here: ";
+            getline(cin, password);                     // user inputs their desired password 
+
+
+            if (password.size() > 7)
+            {
+                isPasswordValid = true;                 // set true, until proven otherwise 
+                for (char c : password)                 // range-based for loop 
+                {
+                    if (isspace(c))      // checks if password contains a space 
+                    {
+                        isPasswordValid = false;
+                        cout << "\nInvalid password. Please do not use spaces.\n";
+                        break;
+                    }
+                    else if (isalpha(c))      // checks if each character is NOT alphanumeric or is a space 
+                    {
+                        isPasswordValid = false;
+                        cout << "\nInvalid password. Please do not use spaces.\n";
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                cout << "\nInvalid password. Please ensure there are at least 6 characters.\n";
+            }
+        }
+
+        if (isPasswordValid == true)
+        {
+            cout << "\nValid password.\nYour password is: " << password << endl;
+        }
     }
 
     return 0;
