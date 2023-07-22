@@ -8,22 +8,19 @@ int main()
 {
     cout << "Welcome to your eBank!\n\n";
 
-    // Start Menu options. Login or Create Account
-    int startMenu = 0;
-    while (startMenu != 1 && startMenu != 2)
+    // Start Menu. Login or Create Account
+    int startMenu = displayStartMenu();
+    switch (startMenu)
     {
-        cout << "\nWhat would you like to do?\n";
-        cout << "1 = Login\n2 = Create Account\n";
-        cin >> startMenu;
-        if (startMenu == 1)
-        {
-            cout << "\nFill in your login information below\n";
-        }
-        else if (startMenu == 2)
-        {
-            cout << "\nLet's create a new account for you!\n";
-        }
-        cin.ignore();
+    case 1: 
+        // login();
+        break;
+    case 2: 
+        // createAccount();
+        break;
+    default: 
+        cout << "\nInvalid option. Please try again.\n";
+        break;
     }
 
     // Create Account 
@@ -139,4 +136,17 @@ int main()
     }
 
     return 0;
+}
+
+// Start Menu function
+int displayStartMenu()
+{
+    int startMenu = 0;
+    while (startMenu != 1 && startMenu != 2)
+    {
+        cout << "\nWhat would you like to do?\n";
+        cout << "1 = Login\n2 = Create Account\n";
+        cin >> startMenu;
+        cin.ignore();
+    }
 }
