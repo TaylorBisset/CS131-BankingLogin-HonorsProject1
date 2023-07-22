@@ -121,6 +121,7 @@ int displayStartMenu()
         cin >> startMenu;
         cin.ignore();
     }
+    return startMenu;
 }
 
 // Login function
@@ -175,4 +176,5 @@ string getValidUsername()
     {
         cout << "\n\tValid username.\n\tYour username is: " << username << endl;
     }
+    return username;
 }
