@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 
@@ -30,32 +31,42 @@ int main()
         cout << endl;
         cout << "Please create a new username\n";
         cout << "Your username must be at least 6 characters long, \n";
-        cout << "and must only contain letters and numbers.\n";
-        
+        cout << "and must only contain letters and numbers.\n\n";
+
         string username;
-        bool usernameValid = false;
-        
-        while (!usernameValid)
+        bool isUsernameValid = false;
+
+        // Create username 
+        while (!isUsernameValid)                        // initiate while loop to check for a valid username input 
         {
-            getline(cin, username);
+            cout << "Enter your usernamne here: ";
+            getline(cin, username);                     // user inputs their desired username 
+
             if (username.size() > 5)
             {
-                for (int i = 0; i < username.size(); i++)
+                isUsernameValid = true;                 // set true, until proven otherwise 
+                for (char c : username)                 // range-based for loop 
                 {
-                    if (!isdigit(username.at(i)) && !isalpha(username.at(i)))
+                    if (!isalnum(c) || isspace(c))      // checks if each character is NOT alphanumeric or is a space
                     {
-                        cout << "Invalid username. Please try another.\n";
-                    }
-                    else
-                    {
-                        usernameValid = true;
+                        isUsernameValid = false;
+                        cout << "\nInvalid username. Please only use letters and numbers.\n";
+                        break;
                     }
                 }
             }
             else
             {
-                cout << "Invalid username.";
+                cout << "\nInvalid username. Please ensure there are at least 6 characters.\n";
             }
         }
+
+        if (isUsernameValid == true)
+        {
+            cout << "Valid username.\nYour username is: " << username << endl;
+        }
     }
+
+
+    return 0;
 }
