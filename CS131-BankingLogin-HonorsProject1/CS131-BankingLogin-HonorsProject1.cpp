@@ -145,6 +145,7 @@ void displayProfileMenu()
             }
         }
     }
+    displayStartMenu();
 }
 
 // Create Profile function
