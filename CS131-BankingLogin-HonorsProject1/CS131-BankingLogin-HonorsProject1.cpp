@@ -198,6 +198,4 @@ string getValidPassword()
     cout << "\n\tValid password.\n\tYour password is: " << password << endl;
     cout << "\n- - - - - - - - - - - - - - - - - - - -\n";
     return password;
-
-    displayStartMenu();
 }
