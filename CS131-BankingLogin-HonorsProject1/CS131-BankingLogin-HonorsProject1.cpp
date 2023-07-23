@@ -7,6 +7,7 @@ using namespace std;
 // Function prototypes
 int displayStartMenu();
 void login();
+void displayProfileMenu();
 void createProfile();
 string getValidUsername();
 string getValidPassword();
