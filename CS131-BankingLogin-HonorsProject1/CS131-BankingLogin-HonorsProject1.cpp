@@ -16,6 +16,8 @@ int main()
     cout << "Welcome to Bisset Bank!\n\n";
 
     // Start Menu. Login or Create Profile
+    string username;
+    string password;
     while (true)
     {
         int startMenu = displayStartMenu();
@@ -82,8 +84,8 @@ void login()
 void createProfile()
 {
     cout << "\nLet's create a new profile for you!\n";
-    string username = getValidUsername();
-    string password = getValidPassword();
+    username = getValidUsername();
+    password = getValidPassword();
 }
 
 // Get valid username function
