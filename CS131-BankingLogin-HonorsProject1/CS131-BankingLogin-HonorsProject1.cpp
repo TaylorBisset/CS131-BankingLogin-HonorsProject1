@@ -80,6 +80,12 @@ void login()
     }
 }
 
+// Profile Accounts function
+void viewProfileAccounts()
+{
+
+}
+
 // Create Profile function
 void createProfile()
 {
