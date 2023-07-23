@@ -36,23 +36,20 @@ void displayStartMenu()
         cin >> startMenu;
         cin.ignore();
 
-        while (true)
+        switch (startMenu)
         {
-            switch (startMenu)
-            {
-            case 1:
-                login();
-                break;
-            case 2:
-                createProfile();
-                break;
-            case 3:
-                cout << "\nThank you for using Bisset Bank. Goodbye!\n";
-                return;
-            default:
-                cout << "\nInvalid option. Please try again.\n";
-                break;
-            }
+        case 1:
+            login();
+            break;
+        case 2:
+            createProfile();
+            break;
+        case 3:
+            cout << "\nThank you for using Bisset Bank. Goodbye!\n";
+            return;
+        default:
+            cout << "\nInvalid option. Please try again.\n";
+            break;
         }
     }
 }
@@ -153,6 +150,7 @@ void createProfile()
     cout << "\nLet's create a new profile for you!\n";
     username = getValidUsername();
     password = getValidPassword();
+    return;
 }
 
 // Get valid username function
