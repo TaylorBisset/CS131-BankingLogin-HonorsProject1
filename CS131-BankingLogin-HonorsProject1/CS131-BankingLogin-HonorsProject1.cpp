@@ -51,7 +51,7 @@ int displayStartMenu()
     while (startMenu != 1 && startMenu != 2)
     {
         cout << "\nWhat would you like to do?\n";
-        cout << "1 = Login\n2 = Create Profile\n";
+        cout << "1 = Login\n2 = Create Profile\n3 = Exit Program\n";
         cin >> startMenu;
         cin.ignore();
     }
