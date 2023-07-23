@@ -7,14 +7,15 @@ using namespace std;
 // Function prototypes
 int displayStartMenu();
 void login();
-void createAccount();
+void createProfile();
 string getValidUsername();
+string getValidPassword();
 
 int main()
 {
     cout << "Welcome to your eBank!\n\n";
 
-    // Start Menu. Login or Create Account
+    // Start Menu. Login or Create Profile
     int startMenu = displayStartMenu();
     switch (startMenu)
     {
@@ -22,7 +23,7 @@ int main()
         login();
         break;
     case 2: 
-        // createAccount();
+        createProfile();
         break;
     default: 
         cout << "\nInvalid option. Please try again.\n";
@@ -40,7 +41,7 @@ int displayStartMenu()
     while (startMenu != 1 && startMenu != 2)
     {
         cout << "\nWhat would you like to do?\n";
-        cout << "1 = Login\n2 = Create Account\n";
+        cout << "1 = Login\n2 = Create Profile\n";
         cin >> startMenu;
         cin.ignore();
     }
@@ -54,9 +55,10 @@ void login()
     // Login logic goes here
 }
 
-void createAccount()
+// Create Profile function
+void createProfile()
 {
-    cout << "\nLet's create a new account for you!\n";
+    cout << "\nLet's create a new profile for you!\n";
     string username = getValidUsername();
     string password = getValidPassword();
 }
@@ -98,6 +100,7 @@ string getValidUsername()
     if (isUsernameValid == true)
     {
         cout << "\n\tValid username.\n\tYour username is: " << username << endl;
+        cout << "\n- - - - - - - - - - - - - - - - - - - -\n";
     }
     return username;
 }
@@ -108,10 +111,10 @@ string getValidPassword()
     bool isPasswordValid = false;
 
     cout << endl;
-    cout << "Please create a password for your new account.\n";
+    cout << "Please create a password for your new profile.\n";
     cout << "Your password must be at least 8 characters long, \n";
     cout << "and must contain at least:\n";
-    cout << "2 letters, 2 numbers,\n2 standard special characters (e.g. !@#$%^&*()),\nand no spaces.\n\n";
+    cout << "2 letters,\n2 numbers,\n2 standard special characters (e.g. !@#$%^&*()),\nand no spaces.\n\n";
     cout << "Remember to NEVER share your password with anyone.\n";
 
     while (!isPasswordValid)                        // initiate while loop to check for a valid password input 
@@ -131,7 +134,6 @@ string getValidPassword()
                 {
                     isPasswordValid = false;
                     cout << "Invalid password. Please do not use spaces.\n";
-                    break;
                 }
                 if (isalpha(c))                     // checks password for letters 
                 {
@@ -150,6 +152,7 @@ string getValidPassword()
         else
         {
             cout << "Invalid password. Please ensure there are at least 8 characters.\n";
+            isPasswordValid = false;
         }
         if (alphaCount < 2)
         {
@@ -167,9 +170,7 @@ string getValidPassword()
             isPasswordValid = false;
         }
     }
-
-    if (isPasswordValid == true)
-    {
-        cout << "\n\tValid password.\n\tYour password is: " << password << endl;
-    }
+    cout << "\n\tValid password.\n\tYour password is: " << password << endl;
+    cout << "\n- - - - - - - - - - - - - - - - - - - -\n";
+    return password;
 }
