@@ -82,6 +82,7 @@ void login()
             cout << "Would you like to try again? (y/n): ";
             char tryAgain;
             cin >> tryAgain;
+            cin.ignore();
             if (tryAgain == 'y')
             {
                 login();
@@ -98,6 +99,7 @@ void login()
         cout << "Would you like to try again? (y/n): ";
         char tryAgain;
         cin >> tryAgain;
+        cin.ignore();
         if (tryAgain == 'y')
         {
             login();
