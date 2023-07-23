@@ -126,24 +126,23 @@ void displayProfileMenu()
             cout << "1 = View Accounts\n2 = Edit Profile\n3 = Logout";
             cin >> profileMenu;
             cin.ignore();
-        }
-
-        switch (profileMenu)
-        {
-        case 1: 
-            //viewProfileAccounts()
-            break;
-        case 2: 
-            //editProfile()
-            break;
-        case 3: 
-            cout << "\nLogging out...\n";
-            validLogin = false;
-            displayStartMenu();
-            break;
-        default: 
-            cout << "\nInvalid choice. Please try again.\n";
-            break;
+            
+            switch (profileMenu)
+            {
+            case 1: 
+                //viewProfileAccounts()
+                break;
+            case 2: 
+                //editProfile()
+                break;
+            case 3: 
+                cout << "\nLogging out...\n";
+                validLogin = false;
+                break;
+            default: 
+                cout << "\nInvalid choice. Please try again.\n";
+                break;
+            }
         }
     }
 }
