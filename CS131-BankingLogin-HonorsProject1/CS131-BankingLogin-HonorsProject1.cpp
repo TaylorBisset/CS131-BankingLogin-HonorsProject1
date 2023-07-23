@@ -76,7 +76,7 @@ void login()
         }
         else
         {
-            cout << "Password: \"" << loginUsername << "\" does not match.\n";
+            cout << "Password: \"" << loginPassword << "\" does not match.\n";
             cout << "Would you like to try again? (y/n): ";
             char tryAgain;
             cin >> tryAgain;
