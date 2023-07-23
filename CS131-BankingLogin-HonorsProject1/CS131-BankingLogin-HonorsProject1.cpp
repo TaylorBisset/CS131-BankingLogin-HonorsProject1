@@ -6,14 +6,16 @@ using namespace std;
 
 // Function prototypes
 void displayStartMenu();
+
 void login();
+bool validLogin;
 void displayProfileMenu();
+
 void createProfile();
 string getValidUsername();
 string getValidPassword();
 string username = "username";
 string password = "password";
-bool validLogin;
 
 int main()
 {
