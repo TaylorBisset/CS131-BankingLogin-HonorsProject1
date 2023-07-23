@@ -119,7 +119,7 @@ void displayProfileMenu()
         {
             cout << "\nWelcome to your Bisset Bank Account, " << username << endl;
             cout << "\nWhat would you like to do?\n";
-            cout << "1 = View Accounts\n2 = Edit Profile\n3 = Logout";
+            cout << "1 = View Accounts\n2 = Edit Profile\n3 = Logout\n";
             cin >> profileMenu;
             cin.ignore();
             
