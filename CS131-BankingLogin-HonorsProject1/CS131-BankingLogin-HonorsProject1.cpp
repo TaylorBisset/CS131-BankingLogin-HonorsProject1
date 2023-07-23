@@ -11,8 +11,8 @@ void displayProfileMenu();
 void createProfile();
 string getValidUsername();
 string getValidPassword();
-string username = username;
-string password = password;
+string username = "username";
+string password = "password";
 bool validLogin;
 
 int main()
