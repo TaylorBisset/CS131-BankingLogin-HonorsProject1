@@ -62,7 +62,6 @@ void login()
 {
     string loginUsername;
     string loginPassword;
-    bool validLogin;
     
     cout << "\nFill in your login information below\n";
     
@@ -75,15 +74,39 @@ void login()
     {
         if (loginPassword == password)
         {
-            validLogin = true;
+            displayProfileMenu();
+        }
+        else
+        {
+            cout << "Password: \"" << loginUsername << "\" does not match.\n";
+            cout << "Would you like to try again? (y/n): ";
+            char tryAgain;
+            cin >> tryAgain;
+            if (tryAgain == 'y')
+            {
+                login();
+            }
+            else
+            {
+                displayStartMenu();
+            }
         }
     }
-}
-
-// Profile Accounts function
-void viewProfileAccounts()
-{
-
+    else
+    {
+        cout << "Username: \"" << loginUsername << "\" does not match.\n";
+        cout << "Would you like to try again? (y/n): ";
+        char tryAgain;
+        cin >> tryAgain;
+        if (tryAgain == 'y')
+        {
+            login();
+        }
+        else
+        {
+            displayStartMenu();
+        }
+    }
 }
 
 // Create Profile function
