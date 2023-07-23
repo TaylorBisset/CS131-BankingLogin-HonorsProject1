@@ -12,6 +12,7 @@ string getValidUsername();
 string getValidPassword();
 string username;
 string password;
+bool validLogin;
 
 int main()
 {
@@ -74,6 +75,7 @@ void login()
     {
         if (loginPassword == password)
         {
+            validLogin = true;
             displayProfileMenu();
         }
         else
@@ -112,18 +114,38 @@ void login()
 }
 
 // Profile Menu function
-int displayProfileMenu()
+void displayProfileMenu()
 {
-    int profileMenu = 0;
-    while (profileMenu != 1)
+    while (validLogin)
     {
-        cout << "\nWelcome to your Bisset Bank Account, " << username << endl;
-        cout << "\nWhat would you like to do?\n";
-        cout << "1 = View Accounts\n";
-        cin >> profileMenu;
-        cin.ignore();
+        int profileMenu = 0;
+        while (profileMenu != 3)
+        {
+            cout << "\nWelcome to your Bisset Bank Account, " << username << endl;
+            cout << "\nWhat would you like to do?\n";
+            cout << "1 = View Accounts\n2 = Edit Profile\n3 = Logout";
+            cin >> profileMenu;
+            cin.ignore();
+        }
+
+        switch (profileMenu)
+        {
+        case 1: 
+            //viewProfileAccounts()
+            break;
+        case 2: 
+            //editProfile()
+            break;
+        case 3: 
+            cout << "\nLogging out...\n";
+            validLogin = false;
+            displayStartMenu();
+            break;
+        default: 
+            cout << "\nInvalid choice. Please try again.\n";
+            break;
+        }
     }
-    return profileMenu;
 }
 
 // Create Profile function
