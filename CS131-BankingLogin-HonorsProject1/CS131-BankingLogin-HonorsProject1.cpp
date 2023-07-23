@@ -5,7 +5,7 @@
 using namespace std;
 
 // Function prototypes
-int displayStartMenu();
+void displayStartMenu();
 void login();
 void displayProfileMenu();
 void createProfile();
@@ -24,7 +24,7 @@ int main()
 /* - - - - - FUNCTIONS - - - - - */
 
 // Start Menu function
-int displayStartMenu()
+void displayStartMenu()
 {
     int startMenu = 0;
     while (startMenu != 3)
@@ -46,14 +46,13 @@ int displayStartMenu()
                 break;
             case 3:
                 cout << "\nThank you for using Bisset Bank. Goodbye!\n";
-                return 0;
+                return;
             default:
                 cout << "\nInvalid option. Please try again.\n";
                 break;
             }
         }
     }
-    return startMenu;
 }
 
 // Login function
