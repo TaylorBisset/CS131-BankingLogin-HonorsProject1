@@ -18,29 +18,7 @@ bool validLogin;
 int main()
 {
     cout << "Welcome to Bisset Bank!\n\n";
-
-    // Start Menu. Login or Create Profile
-    while (true)
-    {
-        int startMenu = displayStartMenu();
-        switch (startMenu)
-        {
-        case 1: 
-            login();
-            break;
-        case 2: 
-            createProfile();
-            break;
-        case 3:
-            cout << "\nThank you for using Bisset Bank. Goodbye!\n";
-            return 0;
-        default: 
-            cout << "\nInvalid option. Please try again.\n";
-            break;
-        }
-    }
-    
-    return 0;
+    displayStartMenu();
 }
 
 /* - - - - - FUNCTIONS - - - - - */
@@ -49,12 +27,31 @@ int main()
 int displayStartMenu()
 {
     int startMenu = 0;
-    while (startMenu != 1 && startMenu != 2)
+    while (startMenu != 3)
     {
         cout << "\nWhat would you like to do?\n";
         cout << "1 = Login\n2 = Create Profile\n3 = Exit Program\n";
         cin >> startMenu;
         cin.ignore();
+
+        while (true)
+        {
+            switch (startMenu)
+            {
+            case 1:
+                login();
+                break;
+            case 2:
+                createProfile();
+                break;
+            case 3:
+                cout << "\nThank you for using Bisset Bank. Goodbye!\n";
+                return 0;
+            default:
+                cout << "\nInvalid option. Please try again.\n";
+                break;
+            }
+        }
     }
     return startMenu;
 }
