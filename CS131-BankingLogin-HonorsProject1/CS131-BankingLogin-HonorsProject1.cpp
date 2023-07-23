@@ -109,6 +109,21 @@ void login()
     }
 }
 
+// Profile Menu function
+int displayProfileMenu()
+{
+    int profileMenu = 0;
+    while (profileMenu != 1)
+    {
+        cout << "\nWelcome to your Bisset Bank Account, " << username << endl;
+        cout << "\nWhat would you like to do?\n";
+        cout << "1 = View Accounts\n";
+        cin >> profileMenu;
+        cin.ignore();
+    }
+    return profileMenu;
+}
+
 // Create Profile function
 void createProfile()
 {
