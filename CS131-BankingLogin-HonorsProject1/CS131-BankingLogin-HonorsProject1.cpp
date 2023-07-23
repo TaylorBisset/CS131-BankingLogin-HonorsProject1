@@ -13,7 +13,7 @@ string getValidPassword();
 
 int main()
 {
-    cout << "Welcome to Bisset eBank!\n\n";
+    cout << "Welcome to Bisset Bank!\n\n";
 
     // Start Menu. Login or Create Profile
     while (true)
@@ -28,7 +28,7 @@ int main()
             createProfile();
             break;
         case 3:
-            cout << "\nThank you for using Bisset eBank. Goodbye!\n";
+            cout << "\nThank you for using Bisset Bank. Goodbye!\n";
             return 0;
         default: 
             cout << "\nInvalid option. Please try again.\n";
@@ -58,8 +58,24 @@ int displayStartMenu()
 // Login function
 void login()
 {
+    string loginUsername;
+    string loginPassword;
+    bool validLogin;
+    
     cout << "\nFill in your login information below\n";
-    // Login logic goes here
+    
+    cout << "Username: ";
+    cin >> loginUsername;
+    cout << "Password: ";
+    cin >> loginPassword;
+
+    if (loginUsername == username)
+    {
+        if (loginPassword == password)
+        {
+            validLogin = true;
+        }
+    }
 }
 
 // Create Profile function
