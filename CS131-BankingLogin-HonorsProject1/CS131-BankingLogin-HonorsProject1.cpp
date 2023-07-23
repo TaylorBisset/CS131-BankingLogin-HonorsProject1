@@ -84,14 +84,14 @@ string getValidUsername()
                 if (!isalnum(c) || isspace(c))      // checks if each character is NOT alphanumeric or is a space 
                 {
                     isUsernameValid = false;
-                    cout << "\nInvalid username. Please only use letters and numbers.\n";
+                    cout << "Invalid username. Please only use letters and numbers.\n";
                     break;
                 }
             }
         }
         else if (username.size() < 6)
         {
-            cout << "\nInvalid username. Please ensure there are at least 6 characters.\n";
+            cout << "Invalid username. Please ensure there are at least 6 characters.\n";
         }
     }
 
@@ -130,7 +130,7 @@ string getValidPassword()
                 if (isspace(c))                     // checks if password contains a space 
                 {
                     isPasswordValid = false;
-                    cout << "\nInvalid password. Please do not use spaces.\n";
+                    cout << "Invalid password. Please do not use spaces.\n";
                     break;
                 }
                 if (isalpha(c))                     // checks password for letters 
@@ -149,21 +149,21 @@ string getValidPassword()
         }
         else
         {
-            cout << "\nInvalid password. Please ensure there are at least 8 characters.\n";
+            cout << "Invalid password. Please ensure there are at least 8 characters.\n";
         }
         if (alphaCount < 2)
         {
-            cout << "\nInvalid password. You must use at least 2 letters.\n";
+            cout << "Invalid password. You must use at least 2 letters.\n";
             isPasswordValid = false;
         }
         if (digitCount < 2)
         {
-            cout << "\nInvalid password. You must use at least 2 numbers.\n";
+            cout << "Invalid password. You must use at least 2 numbers.\n";
             isPasswordValid = false;
         }
         if (specialCount < 2)
         {
-            cout << "\nInvalid password. You must use at least 2 standard special characaters (e.g. !@#$%^&*()).\n";
+            cout << "Invalid password. You must use at least 2 standard special characaters (e.g. !@#$%^&*()).\n";
             isPasswordValid = false;
         }
     }
